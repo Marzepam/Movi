@@ -1,3 +1,4 @@
+<img width="974" height="423" alt="Screenshot 2026-10-23 at 11 33 08" src="https://github.com/user-attachments/assets/adc3eca8-5cab-4002-8a8d-a1b88adad36e" />
 # Movi
 
 A minimal, native macOS video editor in the style of the classic **Shave
