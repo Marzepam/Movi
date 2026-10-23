@@ -1,0 +1,37 @@
+name: Movi
+options:
+  bundleIdPrefix: com.movi
+  deploymentTarget:
+    macOS: "14.0"
+  developmentLanguage: pl
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.movi.Movi
+    MARKETING_VERSION: "2.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    CODE_SIGN_ENTITLEMENTS: Movi.entitlements
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_LANGUAGE: pl
+    SWIFT_EMIT_LOC_STRINGS: YES
+targets:
+  Movi:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+    settings:
+      base:
+        # Switched from Xcode 13's `GENERATE_INFOPLIST_FILE` auto-generation
+        # (which only supports flat string values via `INFOPLIST_KEY_*`
+        # build settings) to an explicit, checked-in `Info.plist` — needed
+        # for `CFBundleDocumentTypes` below, a nested array/dict structure
+        # that build settings can't express. `INFOPLIST_FILE` is resolved
+        # relative to this project.yml, i.e. `Movi/Info.plist`.
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Info.plist
+        COMBINE_HIDPI_IMAGES: YES
+        APPLICATION_EXTENSION_API_ONLY: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
